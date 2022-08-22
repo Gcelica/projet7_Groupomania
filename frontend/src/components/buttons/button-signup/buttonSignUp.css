@@ -1,0 +1,12 @@
+.loginRegisterButton {
+  width: 100%;
+  height: 50px;
+  align-self: center;
+  border-radius: 10px;
+  border: none;
+  background-color: #fd2d01;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}

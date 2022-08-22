@@ -1,0 +1,54 @@
+.topbarContainer {
+  height: 80px;
+  width: 100%;
+  background-color: #ffd7d7;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.topbarLeft {
+  flex: 3;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 3%;
+}
+
+.topbarCenter {
+  flex: 5;
+}
+
+.topbarRight {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.topbarLink {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.topbarImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.currentUser {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: black;
+  pointer-events: none;
+}
