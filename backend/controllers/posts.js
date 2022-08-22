@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 
 //creer un post
+
 exports.createPost = (req, res, next) => {
   const desc = req.body.post;
   const name = req.body.name;
@@ -24,6 +25,7 @@ exports.createPost = (req, res, next) => {
 };
 
 //modification d'un post
+
 exports.modifyPost = (req, res, next) => {
   const desc = req.body.desc;
   const post = {
@@ -42,6 +44,7 @@ exports.modifyPost = (req, res, next) => {
 };
 
 // Récupération d'un post
+
 exports.getOnePost = (req, res, next) => {
   Post.findOne({ _id: req.params.id }) //comparaison meme id dans la requete que dans la base de données
     .then((post) => res.status(200).json(post))
@@ -57,6 +60,7 @@ exports.getAllPosts = (req, res, next) => {
 };
 
 //supprimer un post
+
 exports.deletePost = (req, res, next) => {
   Post.findOne({ _id: req.params.id })
     .then((post) => {
