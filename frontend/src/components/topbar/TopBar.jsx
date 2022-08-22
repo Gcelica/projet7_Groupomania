@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ButtonNewPost from "../buttons/button-newpost/ButtonNewPost";
 
 function TopBar() {
-  const email = localStorage.getItem("email");
+  const name = localStorage.getItem("name");
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
@@ -19,7 +19,7 @@ function TopBar() {
       </div>
 
       <div className="topbarRight">
-        <h2 className="currentUser">{email}</h2>
+        <h2 className="currentUser">{name}</h2>
         <ButtonNewPost />
         <ButtonLogout />
       </div>

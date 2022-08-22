@@ -52,7 +52,7 @@
   border-radius: 10px;
   border: none;
   background-color: #fd2d01;
-  color: white;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
@@ -74,8 +74,17 @@
   border-radius: 10px;
   border: none;
   background-color: #ffd7d7;
-  color: gray;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+
+@media screen and (min-width: 365px) {
+  .loginWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 60%;
+  }
 }

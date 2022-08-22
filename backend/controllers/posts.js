@@ -5,10 +5,13 @@ const User = require("../models/User");
 //creer un post
 exports.createPost = (req, res, next) => {
   const desc = req.body.post;
+  const name = req.body.name;
   const post = new Post({
     userId: req.auth.userId,
+    name: name,
     desc: desc,
   });
+
   if (req.file) {
     post.imageUrl = `${req.protocol}://${req.get("host")}/images/${
       req.file.filename
@@ -46,6 +49,7 @@ exports.getOnePost = (req, res, next) => {
 };
 
 // Récupération de tous les posts d'un utilisateur
+
 exports.getAllPosts = (req, res, next) => {
   Post.find() //liste de tous les posts de la base de donées
     .then((post) => res.status(200).json(post))

@@ -30,7 +30,7 @@
   font-style: 24px;
 }
 
-.loginBox {
+.loginBox2 {
   height: 400px;
   padding: 20px;
   background-color: white;
@@ -52,7 +52,7 @@
   border-radius: 10px;
   border: none;
   background-color: #ffd7d7;
-  color: gray;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
@@ -73,8 +73,17 @@
   border-radius: 10px;
   border: none;
   background-color: #fd2d01;
-  color: gray;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+
+@media screen and (min-width: 365px) {
+  .loginWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 60%;
+  }
 }

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function Share() {
   const token = localStorage.getItem("token");
+  const name = localStorage.getItem("name");
   const [image, setImage] = useState("");
   const [desc, setDesc] = useState("");
   const [preview, setPreview] = useState("");
@@ -17,14 +18,17 @@ function Share() {
   };
 
   function newPost() {
+    const nameData = name;
     const formData = new FormData();
     formData.append("post", desc);
     formData.append("image", image);
+    formData.append("name", nameData);
 
     axios({
       method: "POST",
       url: "http://localhost:5500/api/posts",
       data: formData,
+
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: "Bearer " + token,
@@ -32,7 +36,7 @@ function Share() {
     })
       .then((res) => {
         alert("votre post a été publié");
-        window.location.reload();
+        //window.location.reload();
       })
       .catch((error) => {
         console.log(error);

@@ -9,6 +9,8 @@ function Post() {
   const isAdmin = localStorage.getItem("isAdmin");
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
+  //const name = localStorage.getItem("name");
+
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const [posts, setPosts] = useState([]);
@@ -80,7 +82,7 @@ function Post() {
             <div className="postWrapper">
               <div className="postTop">
                 <div className="postTopLeft">
-                  <span className="postUsername"> {post.userId}</span>
+                  <span className="postUsername">{post.name} dit :</span>
                 </div>
                 <div className="postTopRight">
                   <span className="postDate">

@@ -1,7 +1,7 @@
 import "./editPost.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { PermMedia, Cancel } from "@mui/icons-material";
+import { PermMedia } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 
 export default function EditPost() {
@@ -21,6 +21,7 @@ export default function EditPost() {
       setDesc(res.data.desc);
       setUserId(res.data.userId);
       setPreview(res.data.imageUrl);
+      console.log(res.data.imageUrl);
     });
     // eslint-disable-next-line
   }, []);
@@ -71,17 +72,16 @@ export default function EditPost() {
           />
         </div>
         <hr className="shareHr" />
-        {image && (
-          <div className="shareImgContainer">
-            <img className="shareImg" src={preview} alt="preview" />
-            <Cancel className="shareCancelImg" onClick={() => setImage(null)} />
-          </div>
-        )}
+
+        <div className="shareImgContainer">
+          <img className="shareImg" src={preview} alt="preview" />
+        </div>
+
         <div className="shareBottom">
           <div className="shareOptions">
             <label className="shareOption">
               <PermMedia htmlColor="blue" className="shareIcon" />
-              <span className="shareOptionText">Photo</span>
+              <span className="shareOptionText">Selectionner Photo</span>
               <input
                 style={{ display: "none" }}
                 type="file"

@@ -30,6 +30,8 @@ function FormLogin() {
           localStorage.setItem("email", email);
           localStorage.setItem("userId", res.data.userId);
           localStorage.setItem("isAdmin", res.data.isAdmin);
+          localStorage.setItem("name", res.data.name);
+
           navigate("/feed");
           window.location.reload();
         })
