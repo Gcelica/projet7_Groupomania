@@ -79,11 +79,15 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 365px) {
+@media screen and (min-width: 320px) {
   .loginWrapper {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    height: 60%;
+    height: 70%;
+  }
+  .loginLogo {
+    width: 260px;
+    height: 248px;
   }
 }

@@ -8,13 +8,21 @@ function FormSignup() {
   const email = useRef(); //utlisation de useRef pour gagner un peu de vitesse de chargement
   const password = useRef();
   const name = useRef();
-  const passwordAgain = useRef();
+  const passwordAgain = useRef("");
   const navigate = useNavigate();
+
+  function resetFieldPassword() {
+    console.log(passwordAgain.current.value);
+    passwordAgain.current.value = "";
+    console.log(passwordAgain.current.value);
+  }
 
   const handleSignup = async (e) => {
     e.preventDefault();
+
     if (passwordAgain.current.value !== password.current.value) {
-      passwordAgain.current.setCustomValidity("Mot de passe pas identique!");
+      alert("Mot de passe pas identique!");
+      console.log(passwordAgain.current.value);
     } else {
       const user = {
         email: email.current.value,
@@ -43,7 +51,7 @@ function FormSignup() {
           />
         </div>
         <div className="loginRight">
-          <form className="loginBox2" onSubmit={handleSignup}>
+          <form className="loginBox2">
             <input
               placeholder="Nom"
               required
@@ -71,10 +79,15 @@ function FormSignup() {
               placeholder="valider mot de passe"
               required
               ref={passwordAgain}
+              onClick={() => resetFieldPassword()}
               className="loginInput"
               type="password"
             />
-            <button className="loginRegisterButton" type="submit">
+            <button
+              className="loginRegisterButton"
+              type="submit"
+              onClick={handleSignup}
+            >
               Créer nouveau compte
             </button>
             <div>
